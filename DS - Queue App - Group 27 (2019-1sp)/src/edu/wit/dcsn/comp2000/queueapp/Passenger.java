@@ -1,41 +1,21 @@
 /*
- * Dave Rosenberg 
- * Comp 2000 - Data Structures 
- * Lab 3: Queue application - Train Simulation 
+ * Owen Moreau, Jamie Kerr, Griffin Campbell
+ * Comp 2000 - Data Structures
+ * Lab 3: Queue application - Train Simulation
  * Spring, 2019
- * 
- * Usage restrictions:
- * 
- * You may use this code for exploration, experimentation, and furthering your
- * learning for this course. You may not use this code for any other
- * assignments, in my course or elsewhere, without explicit permission, in
- * advance, from myself (and the instructor of any other course). Further, you
- * may not post or otherwise share this code with anyone other than current
- * students in my sections of this course. Violation of these usage restrictions
- * will be considered a violation of the Wentworth Institute of Technology
- * Academic Honesty Policy.
+ *
  */
-
-/**
- * Representation of an individual who will travel via train between <i>from</i>
- * and <i>to</i> stations.
- */
-
 package edu.wit.dcsn.comp2000.queueapp;
 
 import java.io.FileNotFoundException; // for testing
 import java.util.Arrays; // for testing
 import java.util.Random; // for testing
-
 import edu.wit.dcsn.comp2000.queueapp.Configuration.PairedLimit; // for testing
 
+
 /**
- * Representation of an individual who will travel via train between <i>from</i>
- * and <i>to</i> stations.
- * 
- * @author David M Rosenberg
- * @version 1.0.0 initial version
- * @version 1.0.1 minor fixes (don't affect behaviors)
+ * @author Owen Moreau
+ * @version 1.0.0
  */
 public final class Passenger {
 	// class-wide/shared information

@@ -1,37 +1,10 @@
 /*
- * Dave Rosenberg 
- * Comp 2000 - Data Structures 
- * Lab 3: Queue application - Train Simulation 
+ * Owen Moreau, Jamie Kerr, Griffin Campbell
+ * Comp 2000 - Data Structures
+ * Lab 3: Queue application - Train Simulation
  * Spring, 2019
- * 
- * Usage restrictions:
- * 
- * You may use this code for exploration, experimentation, and furthering your
- * learning for this course. You may not use this code for any other
- * assignments, in my course or elsewhere, without explicit permission, in
- * advance, from myself (and the instructor of any other course). Further, you
- * may not post or otherwise share this code with anyone other than current
- * students in my sections of this course. Violation of these usage restrictions
- * will be considered a violation of the Wentworth Institute of Technology
- * Academic Honesty Policy.
+ *
  */
-
-/**
- * Configuration file parser.
- * 
- * <p>
- * NOTE: This parser assumes that all specifications in the configuration file
- * are valid (e.g. positive, non-zero whole numbers are greater than 0). Future
- * enhancements to this class could enforce the documented constraints and/or
- * provide reasonable defaults to override invalid specifications. As an
- * alternative, it can throw an exception tbd.
- * 
- * <p>
- * Note: You may use this class, with or without modification, in your Comp
- * 2000, Queue application/Train Simulation solution. You must retain all
- * authorship comments. If you modify this, add your authorship to mine.
- */
-
 package edu.wit.dcsn.comp2000.queueapp;
 
 import java.io.File ;
@@ -42,24 +15,8 @@ import java.util.Scanner ;
 
 
 /**
- * Configuration file parser.
- * 
- * <p>
- * NOTE: This parser assumes that all specifications in the configuration file
- * are valid (e.g. positive, non-zero whole numbers are greater than 0). Future
- * enhancements to this class could enforce the documented constraints and/or
- * provide reasonable defaults to override invalid specifications. As an
- * alternative, it can throw an exception tbd.
- * 
- * <p>
- * Note: You may use this class, with or without modification, in your Comp
- * 2000, Queue application/Train Simulation solution. You must retain all
- * authorship comments. If you modify this, add your authorship to mine.
- * 
- * @author David M Rosenberg
- * @version 1.2.0	add toString()
- * @version 1.1.0	track changes to the configuration file layout
- * @version 1.0.0	initial version
+ * @author Owen Moreau
+ * @version 1.0.0
  */
 public final class Configuration
 	{

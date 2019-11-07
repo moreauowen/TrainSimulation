@@ -1,69 +1,20 @@
 /*
- * Dave Rosenberg 
- * Comp 2000 - Data Structures 
- * Lab 3: Queue application - Train Simulation 
+ * Owen Moreau, Jamie Kerr, Griffin Campbell
+ * Comp 2000 - Data Structures
+ * Lab 3: Queue application - Train Simulation
  * Spring, 2019
- * 
- * Usage restrictions:
- * 
- * You may use this code for exploration, experimentation, and furthering your
- * learning for this course. You may not use this code for any other
- * assignments, in my course or elsewhere, without explicit permission, in
- * advance, from myself (and the instructor of any other course). Further, you
- * may not post or otherwise share this code with anyone other than current
- * students in my sections of this course. Violation of these usage restrictions
- * will be considered a violation of the Wentworth Institute of Technology
- * Academic Honesty Policy.
+ *
  */
-
-/**
- * Representation of a train route consisting of a pair of parallel tracks,
- * Station(s) at fixed locations along the tracks, and Train(s) at varying
- * locations along the tracks. Each Station serves both tracks. No two Stations
- * are at the same location. Two trains may be at the same location however only
- * one per track.
- * 
- * <p>
- * NOTE: This class is incomplete - you may want to restructure it based on your
- * implementation's requirements.
- * 
- * <p>
- * <b>WARNING</b>: Some CIRCULAR route functionality is not yet implemented!
- * 
- * <p>
- * Note: You may use this class, with or without modification, in your Comp
- * 2000, Queue application/Train Simulation solution. You must retain all
- * authorship comments. If you modify this, add your authorship to mine.
- */
-
 package edu.wit.dcsn.comp2000.queueapp;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-
 import edu.wit.dcsn.comp2000.queueapp.Configuration.RouteSpec;
 
+
 /**
- * Representation of a train route consisting of a pair of parallel tracks,
- * Station(s) at fixed locations along the tracks, and Train(s) at varying
- * locations along the tracks. Each Station serves both tracks. No two Stations
- * are at the same location. Two trains may be at the same location however only
- * one per track.
- * 
- * <p>
- * NOTE: This class is incomplete - you may want to restructure it based on your
- * implementation's requirements.
- * 
- * <p>
- * <b>WARNING</b>: Some CIRCULAR route functionality is not yet implemented!
- * 
- * <p>
- * Note: You may use this class, with or without modification, in your Comp
- * 2000, Queue application/Train Simulation solution. You must retain all
- * authorship comments. If you modify this, add your authorship to mine.
- * 
- * @author David M Rosenberg
- * @version 1.0.0 base version
+ * @author Owen Moreau
+ * @version 1.0.0
  */
 public final class TrainRoute {
 	// class-wide/shared information
@@ -269,52 +220,4 @@ public final class TrainRoute {
 
 		return calculatedDirection;
 	}
-
-	/**
-	 * Unit test driver
-	 * 
-	 * @param args -unused-
-	 * @throws FileNotFoundException see {@link Configuration#Configuration()}
-	 */
-	public static void main(String[] args) throws FileNotFoundException {
-
-		/*
-		 * Configuration theConfig = new Configuration() ; RouteSpec theRouteSpec =
-		 * theConfig.getRoute() ;
-		 * 
-		 * TrainRoute theRoute = new TrainRoute( theRouteSpec ) ;
-		 * 
-		 * System.out.printf( "Using configuration:%n\t%s%n", theRouteSpec ) ;
-		 * System.out.printf( "The result is:%n\t%s is %s with length %,d%n", theRoute,
-		 * theRoute.getStyle(), theRoute.getLength() ) ;
-		 * 
-		 * System.out.println() ; Location fromLocation = new Location( theRoute, 3,
-		 * Direction.NOT_SPECIFIED ) ; Location toLocation = new Location( theRoute, 3,
-		 * Direction.NOT_SPECIFIED ) ; System.out.printf(
-		 * "From: %s --> to: %s --> is: %s%n", fromLocation, toLocation,
-		 * theRoute.whichDirection( fromLocation, toLocation ) ) ;
-		 * 
-		 * toLocation.setPosition( 5 ); System.out.printf(
-		 * "From: %s --> to: %s --> is: %s%n", fromLocation, toLocation,
-		 * theRoute.whichDirection( fromLocation, toLocation ) ) ;
-		 * 
-		 * toLocation.setPosition( 1 ); System.out.printf(
-		 * "From: %s --> to: %s --> is: %s%n", fromLocation, toLocation,
-		 * theRoute.whichDirection( fromLocation, toLocation ) ) ;
-		 */
-
-//    	// DMR TODO - support for handling CIRCULAR routes is not implemented
-//    	System.out.println() ;
-//    	RouteSpec		circularRouteSpec	= theConfig.new RouteSpec( RouteStyle.CIRCULAR, 20 ) ;
-//    	TrainRoute		circularRoute		= new TrainRoute( circularRouteSpec ) ;
-//    	fromLocation.setRoute( circularRoute );
-//    	toLocation.setRoute( circularRoute );
-//    	toLocation.setPosition( 3 );
-//    	System.out.printf( "From: %s --> to: %s --> is: %s%n",
-//    	                   fromLocation,
-//    	                   toLocation,
-//    	                   circularRoute.whichDirection( fromLocation, toLocation ) ) ;
-
-	} // end test driver main()
-
 } // end class TrainRoute

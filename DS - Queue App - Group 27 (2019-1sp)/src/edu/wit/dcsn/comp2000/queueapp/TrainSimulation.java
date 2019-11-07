@@ -1,29 +1,18 @@
 /*
- * Dave Rosenberg 
+ * Owen Moreau, Jamie Kerr, Griffin Campbell
  * Comp 2000 - Data Structures 
  * Lab 3: Queue application - Train Simulation 
  * Spring, 2019
- * 
- * Usage restrictions:
- * 
- * You may use this code for exploration, experimentation, and furthering your
- * learning for this course. You may not use this code for any other
- * assignments, in my course or elsewhere, without explicit permission, in
- * advance, from myself (and the instructor of any other course). Further, you
- * may not post or otherwise share this code with anyone other than current
- * students in my sections of this course. Violation of these usage restrictions
- * will be considered a violation of the Wentworth Institute of Technology
- * Academic Honesty Policy.
+ *
  */
-
 package edu.wit.dcsn.comp2000.queueapp;
 
 import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.Random;
-
 import edu.wit.dcsn.comp2000.queueapp.Configuration.PairedLimit;
 import edu.wit.dcsn.comp2000.queueapp.Configuration.TrainSpec;
+
 
 /**
  * @author Owen Moreau
@@ -58,7 +47,6 @@ public class TrainSimulation {
 				Arrays.toString(theStationSpecs), "Passengers", Arrays.toString(thePassengerSpecs));
 
 		// create a pseudo-random number generator instance
-
 		Random pseudoRandom = new Random(theConfig.getSeed());
 
 		int minimumPassengers = thePassengerSpecs[Configuration.PASSENGERS_INITIAL].minimum;
@@ -67,7 +55,6 @@ public class TrainSimulation {
 				: pseudoRandom.nextInt(maximumPassengers - minimumPassengers) + minimumPassengers + 1;
 
 		// setup Stations for simulation
-
 		for (int stationPosition : theStationSpecs) {
 			Station aStation = new Station(theRoute, stationPosition);
 			System.out.printf("  [CONFIG] %s is %s%n", aStation, aStation.getLocation());
@@ -76,10 +63,9 @@ public class TrainSimulation {
 			} catch (NullPointerException e) {
 				System.out.println("----------NPE-----------");
 			}
-		} // end foreach()
+		}
 
 		// setup Trains for simulation
-
 		for (TrainSpec aTrainSpecification : theTrainSpecs) {
 			Train aTrain = new Train(theRoute, aTrainSpecification);
 			System.out.printf("  [CONFIG] %s is %s with capacity %,d%n", aTrain, aTrain.getLocation(),
@@ -90,12 +76,11 @@ public class TrainSimulation {
 				System.out.println("----------NPE-----------");
 			}
 
-		} // end foreach()
+		}
 		System.out.println("\n==================================================================\n");
 		Logger.write("\n==================================================================\n");
 
 		// Instantiate initial Passengers
-
 		System.out.printf(" Generating %d passengers before the simulation starts:%n%n", newPassengerCount);
 		Logger.write(" Generating " + newPassengerCount + " passengers before the simulation starts:\n\n");
 
@@ -105,31 +90,17 @@ public class TrainSimulation {
 							Direction.NOT_APPLICABLE),
 					new Location(theRoute, theStationSpecs[pseudoRandom.nextInt(theStationSpecs.length)],
 							Direction.NOT_APPLICABLE),
-					0 // current time indicates that clock hasn't started
-			);
-			/*
-			 * System.out.printf( "\t%s%n", aPassenger.toStringFull() ) ;
-			 */
+					0);
 
 			// this sends passengers to specific Queue
 			theRoute.assignStation(aPassenger);
 
-		} // end for()
+		}
 
 		minimumPassengers = thePassengerSpecs[Configuration.PASSENGERS_PER_TICK].minimum;
 		maximumPassengers = thePassengerSpecs[Configuration.PASSENGERS_PER_TICK].maximum;
 
-		// END INITIAL SETUP
-		// ---------------------------------------------------------
-
-		// ==========================================================================
-		//
-		// SIMULATION HERE
-		//
-		// ==========================================================================
-
 		// Write to console and logger
-
 		Logger.write("\n\n==============================================================");
 		Logger.write("                   SIMULATION START                           ");
 		Logger.write("==============================================================");
@@ -149,10 +120,6 @@ public class TrainSimulation {
 			// Each Passenger in Each Train must get off and return to Station
 			// Each Queue dequeues Passengers IF the Train isn't empty
 			// MOVE TRAINS
-
-			// ----------------------------------------------
-			// PASSENGERS GENERATED
-			// ----------------------------------------------
 
 			// determine this tick's passenger count
 			newPassengerCount = minimumPassengers == maximumPassengers ? minimumPassengers
@@ -175,16 +142,13 @@ public class TrainSimulation {
 				// add Passenger to Queue
 				theRoute.assignStation(aPassenger);
 
-			} // end generating passengers
-
-			// END GENERATING PASSENGERS
-			// ---------------------------------------------------------
+			}
 
 			theRoute.trainInteractions();
 
 			// this tick should only update at the end of the SIMULATION LOOP
 			tick++;
-		} // end SIMULATION LOOP
+		}
 		
 		System.out.println("\n\n==============================================================");
 		System.out.println("                     SIMULATION END                           ");

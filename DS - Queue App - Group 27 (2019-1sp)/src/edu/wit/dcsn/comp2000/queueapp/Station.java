@@ -1,32 +1,10 @@
 /*
- * Dave Rosenberg 
- * Comp 2000 - Data Structures 
- * Lab 3: Queue application - Train Simulation 
+ * Owen Moreau, Jamie Kerr, Griffin Campbell
+ * Comp 2000 - Data Structures
+ * Lab 3: Queue application - Train Simulation
  * Spring, 2019
- * 
- * Usage restrictions:
- * 
- * You may use this code for exploration, experimentation, and furthering your
- * learning for this course. You may not use this code for any other
- * assignments, in my course or elsewhere, without explicit permission, in
- * advance, from myself (and the instructor of any other course). Further, you
- * may not post or otherwise share this code with anyone other than current
- * students in my sections of this course. Violation of these usage restrictions
- * will be considered a violation of the Wentworth Institute of Technology
- * Academic Honesty Policy.
+ *
  */
-
-/**
- * Representation of a station on a train route. A Station has two platforms
- * (queues) where Passengers wait before boarding a train. Passengers wait on
- * the platform which serves trains traveling in the direction that can take
- * them to their destination in the least time.
- * 
- * <p>
- * NOTE: This class is incomplete - you may want to restructure it based on your
- * implementation's requirements.
- */
-
 package edu.wit.dcsn.comp2000.queueapp;
 
 import java.io.FileNotFoundException;
@@ -36,14 +14,10 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 
+
 /**
- * Representation of a station on a train route. A Station has two platforms
- * (queues) where Passengers wait before boarding a train. Passengers wait on
- * the platform which serves trains traveling in the direction that can take
- * them to their destination in the least time.
- * 
- * @author David M Rosenberg
- * @version 1.0.0 base version
+ * @author Owen Moreau
+ * @version 1.0.0
  */
 public final class Station {
 	// class-wide/shared information
